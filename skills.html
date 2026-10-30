@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Skills — Govind Lokam" />
+  <title>Skills | Govind Lokam</title>
+  <link rel="stylesheet" href="style.css" />
+  <script>
+    (function(){try{var t=localStorage.getItem('govind_portfolio_theme');document.documentElement.setAttribute('data-theme',t==='light'?'light':t==='dark'?'dark':(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light');}catch(e){document.documentElement.setAttribute('data-theme','dark');}})();
+  </script>
+  <script src="script.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#main-content">Skip to content</a>
+<header class="site-header">
+  <div class="container">
+    <div class="header-inner">
+      <a href="index.html" class="brand-name">Govind Lokam</a>
+      <nav aria-label="Primary">
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="experience.html">Experience</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="skills.html">Skills</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="nav-right">
+        <button id="theme-toggle" class="theme-btn" type="button" aria-label="Switch to light mode">
+          <span class="toggle-icon" aria-hidden="true">○</span><span class="toggle-text">light</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main id="main-content">
+  <div class="container">
+
+    <div class="page-heading">
+      <h1>Skills</h1>
+      <p>Agentic AI, backend engineering, data lakehouses, and cloud infrastructure.</p>
+    </div>
+
+    <section class="section">
+
+      <div class="skills-group">
+        <p class="skills-group-label">Agentic AI &amp; LLMs</p>
+        <ul>
+          <li>Model Context Protocol (MCP)</li>
+          <li>Tool Use &amp; Function Calling</li>
+          <li>LLM Agents &amp; Multi-step Workflows</li>
+          <li>Google ADK 2.0</li>
+          <li>Gemini API</li>
+          <li>RAG Architectures</li>
+          <li>LLM-as-a-Judge Evaluation</li>
+          <li>Prompt Engineering</li>
+        </ul>
+      </div>
+
+      <div class="skills-group">
+        <p class="skills-group-label">Backend &amp; Systems</p>
+        <ul>
+          <li>Python (AsyncIO, OOP)</li>
+          <li>FastAPI</li>
+          <li>RESTful API Design</li>
+          <li>Pydantic Validation</li>
+          <li>PostgreSQL</li>
+          <li>Supabase Auth &amp; JWT</li>
+          <li>Middleware Architecture</li>
+          <li>SOLID Design Patterns</li>
+        </ul>
+      </div>
+
+      <div class="skills-group">
+        <p class="skills-group-label">Data Engineering &amp; Lakehouse</p>
+        <ul>
+          <li>dbt (dbt-athena)</li>
+          <li>Apache Spark</li>
+          <li>ETL / ELT Pipelines</li>
+          <li>Medallion Architecture</li>
+          <li>Star Schema Modeling</li>
+          <li>SCD Type 2 Snapshots</li>
+          <li>Data Validation &amp; Testing</li>
+          <li>SQL</li>
+        </ul>
+      </div>
+
+      <div class="skills-group">
+        <p class="skills-group-label">Cloud, DevOps &amp; Testing</p>
+        <ul>
+          <li>AWS S3, Glue, Athena</li>
+          <li>AWS Lambda &amp; DynamoDB</li>
+          <li>AWS EventBridge &amp; EC2</li>
+          <li>Docker Compose</li>
+          <li>GitHub Actions (CI/CD)</li>
+          <li>Pytest &amp; Unit Mocking</li>
+          <li>Linux / WSL</li>
+          <li>Git &amp; GitHub</li>
+        </ul>
+      </div>
+
+    </section>
+
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-inner">
+      <p>&copy; <span id="year"></span> Govind Lokam</p>
+      <ul class="footer-nav">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="experience.html">Experience</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+<script>try{document.getElementById('year').textContent=new Date().getFullYear();}catch(e){}</script>
+</body>
+</html>

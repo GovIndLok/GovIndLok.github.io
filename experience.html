@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Experience — Govind Lokam" />
+  <title>Experience | Govind Lokam</title>
+  <link rel="stylesheet" href="style.css" />
+  <script>
+    (function(){try{var t=localStorage.getItem('govind_portfolio_theme');document.documentElement.setAttribute('data-theme',t==='light'?'light':t==='dark'?'dark':(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light');}catch(e){document.documentElement.setAttribute('data-theme','dark');}})();
+  </script>
+  <script src="script.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#main-content">Skip to content</a>
+<header class="site-header">
+  <div class="container">
+    <div class="header-inner">
+      <a href="index.html" class="brand-name">Govind Lokam</a>
+      <nav aria-label="Primary">
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="experience.html">Experience</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="skills.html">Skills</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="nav-right">
+        <button id="theme-toggle" class="theme-btn" type="button" aria-label="Switch to light mode">
+          <span class="toggle-icon" aria-hidden="true">○</span><span class="toggle-text">light</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main id="main-content">
+  <div class="container">
+
+    <div class="page-heading">
+      <h1>Experience</h1>
+      <p>Backend systems, LLM middleware, and production data pipelines.</p>
+    </div>
+
+    <section class="section">
+
+      <!-- Role 1 -->
+      <div class="exp-entry">
+        <div class="exp-top">
+          <span class="exp-role">Backend AI Engineering Intern</span>
+          <span class="exp-date">Jul 2026 &ndash; Sept 2026</span>
+        </div>
+        <p class="exp-place">FlyRank AI &middot; Remote</p>
+        <ul class="exp-bullets">
+          <li>Designed modular RESTful microservices with <strong>FastAPI</strong> and <strong>PostgreSQL</strong>, containerized via <strong>Docker Compose</strong>; applied SOLID design patterns and async connection pooling.</li>
+          <li>Architected secure JWT-based authentication flows using <strong>Supabase Auth</strong> and custom FastAPI middleware for request validation and route guarding.</li>
+          <li>Built fault-tolerant data-ingestion and web-scraping pipelines with exponential backoff, rate limiting, caching, and strict <strong>Pydantic</strong> schemas.</li>
+        </ul>
+      </div>
+
+      <hr />
+
+      <!-- Role 2 -->
+      <div class="exp-entry">
+        <div class="exp-top">
+          <span class="exp-role">Machine Learning Team Lead</span>
+          <span class="exp-date">Jun 2024 &ndash; Sept 2024</span>
+        </div>
+        <p class="exp-place">EdTech Society &middot; Maharashtra, India &middot; IIT Bombay Faculty Mentorship</p>
+        <ul class="exp-bullets">
+          <li>Led a 4-member team under <strong>IIT Bombay faculty mentorship</strong>, assigning tasks and driving delivery milestones.</li>
+          <li>Engineered high-throughput video extraction pipelines processing <strong>15 GB of DAISEE footage</strong> using <strong>FFmpeg</strong> to curate clean ML training frames.</li>
+          <li>Authored Python scripts to organise extracted frames, clean metadata, and prepare labelled datasets for <strong>RetinaNet</strong> training.</li>
+        </ul>
+      </div>
+
+    </section>
+
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-inner">
+      <p>&copy; <span id="year"></span> Govind Lokam</p>
+      <ul class="footer-nav">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="skills.html">Skills</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+<script>try{document.getElementById('year').textContent=new Date().getFullYear();}catch(e){}</script>
+</body>
+</html>
