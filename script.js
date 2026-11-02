@@ -44,7 +44,11 @@
 
     var page = window.location.pathname.split('/').pop() || 'index.html';
     document.querySelectorAll('.nav-links a').forEach(function (link) {
-      if (link.getAttribute('href') === page) link.setAttribute('aria-current', 'page');
+      if (link.getAttribute('href') === page) {
+        link.setAttribute('aria-current', 'page');
+      } else {
+        link.removeAttribute('aria-current');
+      }
     });
 
     if (window.matchMedia) {

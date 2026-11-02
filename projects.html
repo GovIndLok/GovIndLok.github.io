@@ -7,30 +7,34 @@
   <title>Projects | Govind Lokam</title>
   <link rel="stylesheet" href="style.css" />
   <script>
-    (function(){try{var t=localStorage.getItem('govind_portfolio_theme');document.documentElement.setAttribute('data-theme',t==='light'?'light':t==='dark'?'dark':(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light');}catch(e){document.documentElement.setAttribute('data-theme','dark');}})();
+    (function () {
+      try {
+        var saved = localStorage.getItem('govind_portfolio_theme');
+        var systemDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        document.documentElement.setAttribute('data-theme', saved === 'light' || saved === 'dark' ? saved : (systemDark ? 'dark' : 'light'));
+      } catch (error) { document.documentElement.setAttribute('data-theme', 'dark'); }
+    }());
   </script>
   <script src="script.js" defer></script>
 </head>
 <body>
 <a class="skip-link" href="#main-content">Skip to content</a>
 <header class="site-header">
-  <div class="container">
-    <div class="header-inner">
-      <a href="index.html" class="brand-name">Govind Lokam</a>
-      <nav aria-label="Primary">
-        <ul class="nav-links">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="experience.html">Experience</a></li>
-          <li><a href="projects.html">Projects</a></li>
-          <li><a href="skills.html">Skills</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </nav>
-      <div class="nav-right">
-        <button id="theme-toggle" class="theme-btn" type="button" aria-label="Switch to light mode">
-          <span class="toggle-icon" aria-hidden="true">○</span><span class="toggle-text">light</span>
-        </button>
-      </div>
+  <div class="container header-inner">
+    <a href="index.html" class="brand-name">Govind Lokam</a>
+    <nav aria-label="Primary navigation">
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="projects.html" aria-current="page">Projects</a></li>
+        <li><a href="experience.html">Experience</a></li>
+        <li><a href="skills.html">Skills</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="nav-right">
+      <button id="theme-toggle" class="theme-btn" type="button" aria-label="Use light theme" aria-pressed="true">
+        <span class="toggle-icon" aria-hidden="true">☼</span><span class="toggle-text">Light</span>
+      </button>
     </div>
   </div>
 </header>
@@ -47,64 +51,115 @@
 
       <article class="project-entry" id="knowledge-agent">
         <div class="project-top">
-          <span class="project-name">
+          <h2 class="project-name">
             <a href="https://github.com/GovIndLok/obsidian-knowledge-agent" target="_blank" rel="noopener noreferrer">
               AI Knowledge Agent for Obsidian Vaults
             </a>
-          </span>
+          </h2>
           <a href="https://github.com/GovIndLok/obsidian-knowledge-agent" target="_blank" rel="noopener noreferrer" class="project-gh">GitHub &nearr;</a>
         </div>
-        <p class="project-desc">
-          Autonomous agentic pipeline that packages raw documentation and Obsidian markdown notes
-          into structured Open Knowledge Format (OKF) bundles for consumption by downstream AI agents.
-        </p>
-        <ul class="project-points">
-          <li>Engineered with <strong>Google ADK 2.0</strong> and <strong>Gemini API</strong> to orchestrate multi-step autonomous knowledge structuring.</li>
-          <li>Implemented <strong>human-in-the-loop review-and-approval gates</strong> to control which notes and knowledge boundaries agents can access.</li>
-          <li>Built an automated evaluation harness with programmatic unit checks and <strong>LLM-as-a-judge scoring</strong> (Gemini Flash Lite) for verified output quality.</li>
-        </ul>
-        <ul class="tag-row" aria-label="Technologies">
-          <li>Google ADK 2.0</li>
-          <li>Gemini API</li>
-          <li>Python</li>
-          <li>LLM Agents</li>
-          <li>LLM-as-a-Judge</li>
-          <li>OKF</li>
-        </ul>
+
+        <div class="project-section">
+          <h3 class="project-subheading">Problem</h3>
+          <p class="project-text">
+            Personal knowledge vaults and raw Markdown documentation contain unstructured notes and inconsistent linkages. AI agents cannot reliably ingest this raw context without risking hallucinations, missing topic boundaries, or processing private information.
+          </p>
+        </div>
+
+        <div class="project-section">
+          <h3 class="project-subheading">What I built</h3>
+          <p class="project-text">
+            An autonomous agentic pipeline that inspects Obsidian notes and documentation, extracts domain entities, and packages the content into structured Open Knowledge Format (OKF) bundles designed for safe downstream agent consumption.
+          </p>
+        </div>
+
+        <div class="project-section">
+          <h3 class="project-subheading">Engineering</h3>
+          <ul class="project-points">
+            <li>Orchestrated multi-step autonomous knowledge structuring with <strong>Google ADK 2.0</strong> and <strong>Gemini API</strong>.</li>
+            <li>Implemented <strong>human-in-the-loop review-and-approval gates</strong> to control note boundaries and review sensitive content before packaging.</li>
+            <li>Built an automated evaluation harness with programmatic unit assertions and <strong>LLM-as-a-judge scoring</strong> (Gemini Flash Lite) to assess extraction consistency and quality.</li>
+          </ul>
+        </div>
+
+        <div class="project-section">
+          <h3 class="project-subheading">Current state</h3>
+          <p class="project-text">
+            Core structuring pipeline, OKF bundle schema packaging, human review gate workflow, and the LLM-as-a-judge evaluation harness are implemented and validated.
+          </p>
+        </div>
+
+        <div class="project-section">
+          <h3 class="project-subheading">Technology</h3>
+          <ul class="tag-row" aria-label="Technologies">
+            <li>Google ADK 2.0</li>
+            <li>Gemini API</li>
+            <li>Python</li>
+            <li>LLM Agents</li>
+            <li>LLM-as-a-Judge</li>
+            <li>OKF</li>
+          </ul>
+        </div>
       </article>
 
       <hr />
 
       <article class="project-entry" id="f1-platform">
         <div class="project-top">
-          <span class="project-name">
+          <h2 class="project-name">
             <a href="https://github.com/GovIndLok/f1-dbt-analytics" target="_blank" rel="noopener noreferrer">
               F1 Racing Analytics Platform &amp; MCP Server
             </a>
-          </span>
+          </h2>
           <a href="https://github.com/GovIndLok/f1-dbt-analytics" target="_blank" rel="noopener noreferrer" class="project-gh">GitHub &nearr;</a>
         </div>
-        <p class="project-desc">
-          HTTP-based Model Context Protocol (MCP) server integrated with an AWS lakehouse,
-          letting AI agents autonomously discover and execute SQL queries across 70+ years of
-          Formula&nbsp;1 telemetry.
-        </p>
-        <ul class="project-points">
-          <li>Architected with <strong>FastMCP</strong>, enabling LLMs to inspect telemetry schemas and generate valid analytics queries autonomously.</li>
-          <li>Built an AWS lakehouse with <strong>S3, AWS Glue, Athena, and dbt</strong> integrating historical race data and the FastF1 API.</li>
-          <li>Reconciled driver and constructor histories with <strong>SCD Type 2 snapshots</strong> for deterministic historical versioning.</li>
-          <li>Automated post-race delta ingestion and state caching via <strong>AWS Lambda, EventBridge, and DynamoDB</strong>.</li>
-        </ul>
-        <ul class="tag-row" aria-label="Technologies">
-          <li>FastMCP</li>
-          <li>MCP</li>
-          <li>AWS Lambda</li>
-          <li>DynamoDB</li>
-          <li>dbt</li>
-          <li>AWS Athena</li>
-          <li>AWS Glue</li>
-          <li>Python</li>
-        </ul>
+
+        <div class="project-section">
+          <h3 class="project-subheading">Problem</h3>
+          <p class="project-text">
+            Analyzing 70+ years of Formula 1 telemetry and race history requires managing schema drift, complex driver and constructor team changes across eras, and multi-table queries that LLMs cannot accurately generate without structured data models and a standardized interface.
+          </p>
+        </div>
+
+        <div class="project-section">
+          <h3 class="project-subheading">What I built</h3>
+          <p class="project-text">
+            An AWS lakehouse with a Model Context Protocol (MCP) server that allows AI agents to inspect curated analytical schemas and execute historical queries across Formula 1 telemetry.
+          </p>
+        </div>
+
+        <div class="project-section">
+          <h3 class="project-subheading">Engineering</h3>
+          <ul class="project-points">
+            <li>Built an AWS lakehouse on <strong>S3, AWS Glue, and Athena</strong> using a Medallion architecture (Bronze raw ingestion, Silver cleansed tables, Gold analytical marts) populated from the FastF1 API.</li>
+            <li>Transformed analytics models with <strong>dbt (dbt-athena)</strong>, modeling <strong>SCD Type 2 snapshots</strong> for deterministic historical tracking of driver and constructor transfers.</li>
+            <li>Developed an HTTP-based <strong>FastMCP</strong> server exposing schema discovery and controlled Athena query execution tools for AI agents.</li>
+            <li>Automated post-race ingestion pipelines and state caching via <strong>AWS Lambda, EventBridge, and DynamoDB</strong>.</li>
+          </ul>
+        </div>
+
+        <div class="project-section">
+          <h3 class="project-subheading">Current state</h3>
+          <p class="project-text">
+            Data lakehouse architecture (Bronze, Silver, Gold layers with dbt models) and the FastMCP server query interface are implemented and operational.
+          </p>
+        </div>
+
+        <div class="project-section">
+          <h3 class="project-subheading">Technology</h3>
+          <ul class="tag-row" aria-label="Technologies">
+            <li>FastMCP</li>
+            <li>MCP</li>
+            <li>AWS S3</li>
+            <li>AWS Glue</li>
+            <li>AWS Athena</li>
+            <li>dbt</li>
+            <li>AWS Lambda</li>
+            <li>DynamoDB</li>
+            <li>Python</li>
+            <li>SQL</li>
+          </ul>
+        </div>
       </article>
 
     </section>
@@ -113,16 +168,15 @@
 </main>
 
 <footer class="site-footer">
-  <div class="container">
-    <div class="footer-inner">
-      <p>&copy; <span id="year"></span> Govind Lokam</p>
-      <ul class="footer-nav">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="experience.html">Experience</a></li>
-        <li><a href="skills.html">Skills</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </div>
+  <div class="container footer-inner">
+    <p>&copy; <span id="year"></span> Govind Lokam</p>
+    <ul class="footer-nav">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="experience.html">Experience</a></li>
+      <li><a href="skills.html">Skills</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
   </div>
 </footer>
 

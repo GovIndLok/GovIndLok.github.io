@@ -7,30 +7,34 @@
   <title>Skills | Govind Lokam</title>
   <link rel="stylesheet" href="style.css" />
   <script>
-    (function(){try{var t=localStorage.getItem('govind_portfolio_theme');document.documentElement.setAttribute('data-theme',t==='light'?'light':t==='dark'?'dark':(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light');}catch(e){document.documentElement.setAttribute('data-theme','dark');}})();
+    (function () {
+      try {
+        var saved = localStorage.getItem('govind_portfolio_theme');
+        var systemDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        document.documentElement.setAttribute('data-theme', saved === 'light' || saved === 'dark' ? saved : (systemDark ? 'dark' : 'light'));
+      } catch (error) { document.documentElement.setAttribute('data-theme', 'dark'); }
+    }());
   </script>
   <script src="script.js" defer></script>
 </head>
 <body>
 <a class="skip-link" href="#main-content">Skip to content</a>
 <header class="site-header">
-  <div class="container">
-    <div class="header-inner">
-      <a href="index.html" class="brand-name">Govind Lokam</a>
-      <nav aria-label="Primary">
-        <ul class="nav-links">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="experience.html">Experience</a></li>
-          <li><a href="projects.html">Projects</a></li>
-          <li><a href="skills.html">Skills</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </nav>
-      <div class="nav-right">
-        <button id="theme-toggle" class="theme-btn" type="button" aria-label="Switch to light mode">
-          <span class="toggle-icon" aria-hidden="true">○</span><span class="toggle-text">light</span>
-        </button>
-      </div>
+  <div class="container header-inner">
+    <a href="index.html" class="brand-name">Govind Lokam</a>
+    <nav aria-label="Primary navigation">
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="experience.html">Experience</a></li>
+        <li><a href="skills.html" aria-current="page">Skills</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="nav-right">
+      <button id="theme-toggle" class="theme-btn" type="button" aria-label="Use light theme" aria-pressed="true">
+        <span class="toggle-icon" aria-hidden="true">☼</span><span class="toggle-text">Light</span>
+      </button>
     </div>
   </div>
 </header>
@@ -40,63 +44,61 @@
 
     <div class="page-heading">
       <h1>Skills</h1>
-      <p>Agentic AI, backend engineering, data lakehouses, and cloud infrastructure.</p>
+      <p>Applied AI workflows, backend systems, cloud data platforms, and infrastructure.</p>
     </div>
 
     <section class="section">
 
       <div class="skills-group">
-        <p class="skills-group-label">Agentic AI &amp; LLMs</p>
+        <h2 class="skills-group-label">AI and Agent Systems</h2>
         <ul>
-          <li>Model Context Protocol (MCP)</li>
+          <li>Model Context Protocol (MCP / FastMCP)</li>
           <li>Tool Use &amp; Function Calling</li>
-          <li>LLM Agents &amp; Multi-step Workflows</li>
+          <li>Multi-Step LLM Agent Workflows</li>
           <li>Google ADK 2.0</li>
           <li>Gemini API</li>
-          <li>RAG Architectures</li>
+          <li>Human-in-the-Loop Agent Verification</li>
           <li>LLM-as-a-Judge Evaluation</li>
-          <li>Prompt Engineering</li>
         </ul>
       </div>
 
       <div class="skills-group">
-        <p class="skills-group-label">Backend &amp; Systems</p>
+        <h2 class="skills-group-label">Backend and Systems</h2>
         <ul>
           <li>Python (AsyncIO, OOP)</li>
           <li>FastAPI</li>
-          <li>RESTful API Design</li>
-          <li>Pydantic Validation</li>
+          <li>RESTful API Architecture</li>
+          <li>Pydantic Validation &amp; Schemas</li>
           <li>PostgreSQL</li>
           <li>Supabase Auth &amp; JWT</li>
           <li>Middleware Architecture</li>
-          <li>SOLID Design Patterns</li>
+          <li>SOLID Design Principles</li>
         </ul>
       </div>
 
       <div class="skills-group">
-        <p class="skills-group-label">Data Engineering &amp; Lakehouse</p>
+        <h2 class="skills-group-label">Data Engineering</h2>
         <ul>
           <li>dbt (dbt-athena)</li>
-          <li>Apache Spark</li>
+          <li>Medallion Architecture (Bronze, Silver, Gold)</li>
+          <li>SCD Type 2 Snapshots &amp; History</li>
+          <li>Dimensional Data Modeling</li>
           <li>ETL / ELT Pipelines</li>
-          <li>Medallion Architecture</li>
-          <li>Star Schema Modeling</li>
-          <li>SCD Type 2 Snapshots</li>
-          <li>Data Validation &amp; Testing</li>
+          <li>Data Validation &amp; Schema Enforcement</li>
           <li>SQL</li>
         </ul>
       </div>
 
       <div class="skills-group">
-        <p class="skills-group-label">Cloud, DevOps &amp; Testing</p>
+        <h2 class="skills-group-label">Cloud and DevOps</h2>
         <ul>
           <li>AWS S3, Glue, Athena</li>
           <li>AWS Lambda &amp; DynamoDB</li>
-          <li>AWS EventBridge &amp; EC2</li>
+          <li>AWS EventBridge</li>
           <li>Docker Compose</li>
           <li>GitHub Actions (CI/CD)</li>
-          <li>Pytest &amp; Unit Mocking</li>
-          <li>Linux / WSL</li>
+          <li>Pytest &amp; Unit Testing</li>
+          <li>Linux / Shell</li>
           <li>Git &amp; GitHub</li>
         </ul>
       </div>
@@ -107,16 +109,15 @@
 </main>
 
 <footer class="site-footer">
-  <div class="container">
-    <div class="footer-inner">
-      <p>&copy; <span id="year"></span> Govind Lokam</p>
-      <ul class="footer-nav">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="experience.html">Experience</a></li>
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </div>
+  <div class="container footer-inner">
+    <p>&copy; <span id="year"></span> Govind Lokam</p>
+    <ul class="footer-nav">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="experience.html">Experience</a></li>
+      <li><a href="skills.html">Skills</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
   </div>
 </footer>
 
